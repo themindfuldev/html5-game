@@ -1,3 +1,7 @@
+/*
+* This function will handle the pressed key
+* @param event The caught event
+*/
 function keyPressed(event)
 {
 	var code, arrow;
