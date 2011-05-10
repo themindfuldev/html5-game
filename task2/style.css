@@ -1,0 +1,8 @@
+#avatar {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 300px;
+	height: 283px;
+	background-image: url('booRight.jpg');
+}
