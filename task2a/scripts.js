@@ -1,6 +1,3 @@
-/**
- Avatar declaration
-*/
 function Avatar(filename, extension, x, y) {
   this.x = x;
   this.y = y;
@@ -165,6 +162,7 @@ $(document).ready(function() {
 
 	// Starting the event listeners
 	$(document).bind("keydown", moveAvatarByKeystroke);
+	$(document).bind("mousemove", moveAvatarByMouseMove);
 });
 
 /**
@@ -179,6 +177,21 @@ function moveAvatarByKeystroke(event) {
 		case 39: destination.x += 50; break; // right
 		case 40: destination.y += 50; break; // down
 	}
+}
+
+/**
+ Event listener to the mouse move
+ @param event The event
+*/
+function moveAvatarByMouseMove(event) {
+	var eventX = event.pageX;
+	var eventY = event.pageY;
+	
+	if  (eventX < avatar.x || eventX > avatar.x+avatar.width || eventY < avatar.y || eventY > avatar.y+avatar.height) {
+		destination.x = eventX;
+		destination.y = eventY;
+	}
+	
 }
 
 /**
